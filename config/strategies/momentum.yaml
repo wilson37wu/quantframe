@@ -1,0 +1,61 @@
+# Momentum Strategy Configuration
+
+# Core strategy parameters
+lookback_periods: [20, 60, 120]  # Multiple lookback periods for momentum calculation
+breakout_threshold: 2.0
+trend_threshold: 0.05
+momentum_smoothing: 10
+volume_factor: 1.5
+
+# Position sizing parameters
+volatility_lookback: 21
+position_size_atr_multiple: 0.5
+max_position_size: 0.1
+kelly_fraction: 0.5
+position_update_frequency: "1d"
+
+# Risk management parameters
+stop_loss_atr_multiple: 2.0
+take_profit_atr_multiple: 4.0
+max_drawdown: 0.25
+max_leverage: 2.0
+correlation_threshold: 0.7
+
+# Volatility filters
+min_volatility: 0.15
+max_volatility: 0.60
+vol_window: 20
+vol_target: 0.20
+vol_scaling: true
+
+# Market filters
+min_adv: 2000000     # Minimum average daily volume in USD
+min_price: 1.0
+max_spread: 0.003
+liquidity_threshold: 0.8  # Minimum market depth ratio
+
+# Signal generation
+signal_weights:
+  price_momentum: 0.4
+  volume_momentum: 0.2
+  volatility_regime: 0.2
+  market_regime: 0.2
+
+# Execution parameters
+order_type: "LIMIT"
+slippage_tolerance: 0.001
+execution_timeout: 30
+retry_attempts: 3
+retry_delay: 5
+
+# Monitoring parameters
+health_check_interval: 60
+rebalance_interval: "1d"
+logging_level: "INFO"
+
+# Market regime parameters
+regime_detection:
+  lookback: 120
+  smoothing: 20
+  threshold_high: 0.8
+  threshold_low: 0.2

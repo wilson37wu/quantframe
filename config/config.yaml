@@ -1,0 +1,41 @@
+data:
+  api_config: ${API_CONFIG_PATH:config/api_config.yaml}
+  default_cache_dir: "data/cache"
+  binance:
+    api_key: ${BINANCE_API_KEY}
+    api_secret: ${BINANCE_API_SECRET}
+    base_url: "https://api.binance.com"
+    kline_endpoint: "/api/v3/klines"
+    
+  polygon:
+    api_key: ${POLYGON_API_KEY}
+    base_url: "https://api.polygon.io/v2"
+    
+strategy:
+  mean_reversion:
+    lookback_period: 20
+    entry_threshold: 2.0
+    exit_threshold: 0.5
+    stop_loss: 0.02
+    vol_window: 20
+    kelly_fraction: 0.5
+    max_position_size: 0.25
+    
+risk_management:
+  max_drawdown: 0.20
+  max_leverage: 2.0
+  max_correlation: 0.7
+  target_volatility: 0.20
+  
+execution:
+  default_exchange: "binance"
+  order_timeout: 30
+  max_slippage: 0.001
+  
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  handlers:
+    - type: file
+      filename: "trading.log"
+    - type: console

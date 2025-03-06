@@ -1,0 +1,43 @@
+# Mean Reversion Strategy Configuration
+
+# Core strategy parameters
+lookback_period: 20
+entry_zscore: 2.0
+exit_zscore: 0.5
+rsi_period: 14
+rsi_entry_threshold: 30
+rsi_exit_threshold: 70
+
+# Position sizing parameters
+volatility_lookback: 21
+position_size_atr_multiple: 0.5
+max_position_size: 0.1
+kelly_fraction: 0.5
+
+# Risk management parameters
+stop_loss_atr_multiple: 2.0
+take_profit_atr_multiple: 3.0
+max_drawdown: 0.20
+max_leverage: 2.0
+
+# Volatility filters
+min_volatility: 0.10  # Minimum annualized volatility
+max_volatility: 0.50  # Maximum annualized volatility
+vol_window: 20       # Window for volatility calculation
+
+# Market filters
+min_adv: 1000000     # Minimum average daily volume in USD
+min_price: 1.0       # Minimum price filter
+max_spread: 0.005    # Maximum allowed spread
+
+# Execution parameters
+order_type: "LIMIT"
+slippage_tolerance: 0.001
+execution_timeout: 30  # seconds
+retry_attempts: 3
+retry_delay: 5        # seconds
+
+# Monitoring parameters
+health_check_interval: 60  # seconds
+rebalance_interval: "1d"   # Pandas time string
+logging_level: "INFO"

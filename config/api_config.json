@@ -1,0 +1,13 @@
+{
+    "binance": {
+        "api_key": "your_api_key_here",
+        "api_secret": "your_api_secret_here",
+        "use_testnet": false,
+        "testnet": {
+            "enabled": false,
+            "api_key": "",
+            "api_secret": "",
+            "base_url": "https://testnet.binance.vision"
+        }
+    }
+}

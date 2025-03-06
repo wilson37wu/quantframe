@@ -1,0 +1,63 @@
+# Grid Trading Strategy Configuration
+
+# Grid parameters
+grid_levels: 10
+grid_spacing: 0.01  # 1% between levels
+grid_type: "arithmetic"  # or "geometric"
+rebalance_threshold: 0.005  # 0.5% deviation triggers rebalance
+
+# Position sizing
+base_order_size: 100  # Base currency units
+max_position_size: 1000
+position_step_size: 10
+size_scaling_factor: 1.5  # Increase size for favorable levels
+
+# Risk management
+max_drawdown: 0.15
+max_leverage: 3.0
+stop_loss_level: 0.10  # 10% below lowest grid
+take_profit_level: 0.20  # 20% above highest grid
+
+# Market filters
+min_volatility: 0.05
+max_volatility: 0.40
+min_volume: 1000000
+min_spread: 0.0001
+max_spread: 0.002
+
+# Execution parameters
+order_type: "LIMIT"
+post_only: true
+slippage_tolerance: 0.001
+execution_timeout: 30
+retry_attempts: 3
+retry_delay: 5
+
+# Grid adjustments
+dynamic_spacing: true
+volatility_scaling: true
+vol_lookback: 20
+vol_multiplier: 1.5
+
+# Monitoring
+health_check_interval: 30
+grid_update_interval: 300  # 5 minutes
+logging_level: "INFO"
+
+# Advanced parameters
+profit_taking:
+  enabled: true
+  threshold: 0.02  # Take profit at 2% per grid
+  reinvest: true
+
+loss_handling:
+  stop_and_reset: true
+  partial_close: false
+  hedge_at_extremes: true
+
+volatility_adjustments:
+  enabled: true
+  vol_window: 24
+  vol_threshold_high: 0.4
+  vol_threshold_low: 0.1
+  spacing_multiplier: 1.5

@@ -1,0 +1,20 @@
+# API Configuration
+# DO NOT commit this file to version control
+# Use environment variables or .env file for sensitive data
+
+binance:
+  api_key: ${BINANCE_API_KEY}
+  api_secret: ${BINANCE_API_SECRET}
+  base_url: "https://api.binance.com"
+  testnet:
+    enabled: false
+    api_key: ${BINANCE_TESTNET_API_KEY}
+    api_secret: ${BINANCE_TESTNET_API_SECRET}
+    base_url: "https://testnet.binance.vision"
+
+polygon:
+  api_key: ${POLYGON_API_KEY}
+  base_url: "https://api.polygon.io/v2"
+  
+yfinance:
+  cache_dir: "data/cache/yfinance"

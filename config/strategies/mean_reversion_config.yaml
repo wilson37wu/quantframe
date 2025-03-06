@@ -1,0 +1,14 @@
+base_order_size: 0.01
+base_stop_loss_pct: 0.02
+base_take_profit_pct: 0.04
+bb_period: 20
+bb_std_dev: 2.0
+deviation_threshold: 2.0
+ma_long_period: 30
+ma_short_period: 10
+max_position_size: 0.1
+momentum_period: 10
+momentum_threshold: 0.02
+signal_threshold: 0.2
+volatility_multiplier: 1.0
+volatility_scaling: true

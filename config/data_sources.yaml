@@ -1,0 +1,10 @@
+binance:
+  cache_dir: "data/cache/crypto"
+  # Fill these with your Binance API credentials
+  api_key: ""
+  api_secret: ""
+
+yfinance:
+  cache_dir: "data/cache/stocks"
+
+# Add more data sources as needed
